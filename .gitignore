@@ -1,0 +1,36 @@
+# --- 编译产物 & 二进制文件 ---
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+# 忽略 bin 目录（如果你习惯把编译结果放在这里）
+bin/
+
+# --- IDE & 编辑器配置 (不需要同步给别人) ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- 操作系统生成的文件 ---
+.DS_Store
+Thumbs.db
+
+# --- Go 依赖 (通常不需要提交 vendor，除非你所在的团队强制要求) ---
+vendor/
+go.work
+
+# --- 日志文件 ---
+*.log
+logs/
+
+# --- Go Zero 配置文件 (关键) ---
+# 忽略 etc 下所有的 yaml 文件，防止数据库密码泄露
+**/etc/*.yaml
+
+# 但是，允许提交以 .example.yaml 结尾的模板文件
+# 你可以复制一份 task-api.yaml 改名为 task-api.yaml.example 删掉密码后提交
+!**/etc/*.yaml.example
