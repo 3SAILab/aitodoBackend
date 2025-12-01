@@ -2,7 +2,6 @@ package logic
 
 import (
 	"context"
-	"fmt"
 	"todo/app/task/api/internal/svc"
 	"todo/app/task/api/internal/types"
 
@@ -40,13 +39,13 @@ func (l *ListTaskLogic) ListTask() (resp *types.ListTaskResp, err error) {
 			completedAt = t.CompletedAt.Time.Unix()
 		}
 
-		fmt.Printf("数据库 created_at: %v\n", t.CreatedAt)       // 应该显示 2025-11-29 10:22:14 +0800 CST
-		fmt.Printf("CreatedAt 时间戳: %v\n", t.CreatedAt.Unix()) // 对应 1759160534（示例值）
+		// fmt.Printf("数据库 created_at: %v\n", t.CreatedAt)       // 应该显示 2025-11-29 10:22:14 +0800 CST
+		// fmt.Printf("CreatedAt 时间戳: %v\n", t.CreatedAt.Unix()) // 对应 1759160534（示例值）
 
-		if t.DueDate.Valid {
-			fmt.Printf("数据库 due_date: %v\n", t.DueDate.Time)       // 应该显示 2025-11-29 18:26:00 +0800 CST
-			fmt.Printf("DueDate 时间戳: %v\n", t.DueDate.Time.Unix()) // 对应 1759189560（示例值）
-		}
+		// if t.DueDate.Valid {
+		// 	fmt.Printf("数据库 due_date: %v\n", t.DueDate.Time)       // 应该显示 2025-11-29 18:26:00 +0800 CST
+		// 	fmt.Printf("DueDate 时间戳: %v\n", t.DueDate.Time.Unix()) // 对应 1759189560（示例值）
+		// }
 
 		respList = append(respList, types.TaskResp{
 			Id:            t.Id,

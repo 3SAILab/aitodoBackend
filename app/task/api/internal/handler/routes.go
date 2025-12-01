@@ -70,6 +70,16 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/tasks/:id",
 				Handler: UpdateTaskHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/tasks/:taskId/progress",
+				Handler: CreateTaskProgressHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/tasks/:taskId/progress",
+				Handler: ListTaskProgressHandler(serverCtx),
+			},
 		},
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 	)

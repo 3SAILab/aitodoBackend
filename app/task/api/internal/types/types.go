@@ -98,3 +98,24 @@ type TaskResp struct {
 type ListTaskResp struct {
 	List []TaskResp `json:"list"`
 }
+
+type CreateTaskProgressReq struct {
+	TaskId  string `path:"taskId"`
+	Content string `json:"content"`
+}
+
+type TaskProgressResp struct {
+	Id        string `json:"id"`
+	TaskId    string `json:"taskId"`
+	Content   string `json:"content"`
+	CreatedBy string `json:"createdBy"`
+	CreatedAt int64  `json:"createdAt"`
+}
+
+type ListTaskProgressReq struct {
+	TaskId string `path:"taskId"`
+}
+
+type ListTaskProgressResp struct {
+	List []TaskProgressResp `json:""list`
+}
