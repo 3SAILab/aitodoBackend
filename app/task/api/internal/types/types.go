@@ -117,5 +117,5 @@ type ListTaskProgressReq struct {
 }
 
 type ListTaskProgressResp struct {
-	List []TaskProgressResp `json:""list`
+	List []TaskProgressResp `json:"list"`
 }

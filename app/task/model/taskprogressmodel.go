@@ -11,10 +11,10 @@ import (
 
 type TaskProgressLog struct {
 	Id        string    `db:"id"`
-	TaskId    string    `db:task_id`
-	Content   string    `db:content`
-	CreatedBy string    `db:created_by`
-	CreatedAt time.Time `db:created_at`
+	TaskId    string    `db:"task_id"`
+	Content   string    `db:"content"`
+	CreatedBy string    `db:"created_by"`
+	CreatedAt time.Time `db:"created_at"`
 }
 
 type TaskProgressModel interface {
