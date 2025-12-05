@@ -15,6 +15,21 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/users/login",
 				Handler: LoginHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/users/refresh-token",
+				Handler: RefreshTokenHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/users/logout",
+				Handler: LogoutHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/users/verify-token",
+				Handler: VerifyTokenHandler(serverCtx),
+			},
 		},
 	)
 	server.AddRoutes(
